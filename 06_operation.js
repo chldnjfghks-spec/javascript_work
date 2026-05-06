@@ -24,3 +24,11 @@ console.log(true && false && '뉴진즈')
 let input = '홍길동'
 const userName = input || '익명';
 console.log(userName)
+
+//null 봉합 연산자
+console.log('-------------------------')
+let name;
+console.log(name)
+//?? : name 이 null or undefind이 아니면 출력, 널이면 다음것 출력
+name = name ?? '안유진';
+console.log(name)
