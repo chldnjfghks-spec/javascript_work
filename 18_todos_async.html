@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+  </head>
+  <body>
+    <button id="btn">할 일 불러오기</button>
+    <div id="list">이 곳에 할일이 들어와요</div>
+  </body>
+  <script>
+    async function getTodos() {
+      try{
+        const respone = await fetch("https://jsonplaceholder.typicode.com/todos?_limit=5")
+        const data = await respone.json()
+
+          const list = document.getElementById("list");
+          // 기존 내용 초기화
+          list.innerHTML = ""
+          date.forEach(todo => {
+            // div 태그를 생성
+            const div = document.createElement("div")
+            div.textContent = `${todo.complted? "✔" : "❤"} ${todo.title}`
+            list.appendChild(div)
+          });
+          console.log(date)
+      }catch(err){
+        console.log("DB가 이상해요 ")
+      }
+    }
+
+
+    document.getElementById("btn").addEventListener("click", function () {
+      getTodos()
+    })
+  </script>
+</html>

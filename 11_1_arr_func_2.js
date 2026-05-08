@@ -24,7 +24,7 @@ fruits.sort((a,b) => a.localeCompare(b))
 console.log(`오름차순 : ${fruits}`)
 //내림차순
 fruits.sort((a,b) => b.localeCompare(a))
-console.log(`오름차순 : ${fruits}`)
+console.log(`내림차순 : ${fruits}`)
 
 // Object 내부의 값을 기준으로 비교 후 정렬
 numbers.sort((a,b) => {
@@ -55,3 +55,14 @@ console.log(data)
 console.log(data.filter(x => x % 2 === 0))
 // 2. 3 보다 큰 수를 오름차순 정렬 출력
 console.log(data.filter(x => x > 3).sort((a,b)=>a-b))
+
+
+// find()와 findIndex() 함수
+numbers = [1,8,7,5,3];
+// 첫번재로 조건과 일치하는 값을 찾음, 없으면 undefind
+console.log(numbers.find(x => x % 2 === 0))
+// 첫번재로 조건과 일치하는 색인 값을 찾음, 없으면 -1
+console.log(numbers.findIndex(x => x % 2 === 0))
+
+//reduce() 함수 -- 누적을 할 때 사용
+console.log(numbers.reduce((x, y) => x*y, 1))
